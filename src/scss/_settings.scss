@@ -1,0 +1,109 @@
+//Colors
+$green: #19bd9a;
+$gray: #81868e;
+$main: #333b46;
+$silv: #f3f3f3;
+
+//Fonts
+$fSans: 'Open Sans', sans-serif;
+$fSource: 'Source Sans Pro', sans-serif;
+
+//Path
+$imgDir: '../assets/';
+
+//Other
+$menButBor: 1px solid #fff;
+$icSize: 50px;
+
+//Mixins
+@mixin bgCov($url){
+	background-image: url($imgDir + $url);
+	background-size: cover;
+	background-position: center;
+}
+
+@mixin flex($just: auto, $align: auto, $dir: row, $wrap: nowrap){
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $just;
+	align-items: $align;
+	flex-wrap: $wrap;
+}
+
+@function PI(){
+	@return 3.1415;
+}
+
+//classes
+%full{
+	width: 100%;
+	height: 100%;
+}
+
+//import fonts
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Display:700|Open+Sans|Source+Sans+Pro:300&display=swap');
+
+
+//General styles
+html{
+	font: {
+		size: 14px;
+		family: $fSans;
+	};
+}
+
+body{
+	padding: 0;
+	margin: 0;
+
+	color: $main;
+
+	overflow-x: hidden;
+}
+
+
+*, *::after, *::before{
+	box-sizing: border-box;
+}
+
+.container{
+	padding: 5rem 2rem;
+}
+
+.but{
+	display: inline-block;
+	padding: .5rem 1.5rem;
+
+	border-radius: 20%/50%;
+	border: 1px solid #000;
+
+	color: #000;
+
+	cursor: pointer;
+
+	&_white{
+		border-color: #fff;
+		color: #fff;
+	}
+}
+
+.about__us__info__head{
+	text: {
+		transform: uppercase;
+		align: center;
+	}
+
+	font: {
+		size: 1.75rem;
+		family: $fSource;
+	};
+
+	letter-spacing: 5px;
+
+	padding-bottom: 40px;
+}
+
+.text-green{
+	color: $green;
+	font-weight: bold;
+}

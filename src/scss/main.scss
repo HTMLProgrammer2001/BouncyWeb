@@ -1,0 +1,390 @@
+@import 'settings';
+
+//Intro section
+
+.intro{
+	width: 100vw;
+	height: 100vh;
+
+	@include flex($dir: column, $just: space-between);
+
+	color: #fff;
+
+	@include bgCov('intro-bg.jpg');
+
+	&__navbar{
+		display: flex;
+		justify-content: space-around;
+
+		padding-top: 3rem;
+
+		&__logo{
+			font: {
+				size: 1.75rem;
+				weight: 700;
+			};
+		}
+
+
+		//Navbar menu
+		&__menu{
+			display: flex;
+
+			&__item{
+
+				a{
+					padding: .5rem 1.25rem;
+					margin-right: .75rem;
+
+					line-height: .75rem;
+
+					border-radius: 25%/50%;
+					border: 1px solid transparent;
+
+					cursor: pointer;
+
+					transition: .2s;
+
+					color: #fff;
+					text-decoration: none;
+
+					&:hover{
+						border: $menButBor;
+						background: rgba(255, 255, 255, .3);
+					}
+
+					&.active{
+						border: $menButBor;
+					}
+				}
+			}
+		}
+	}
+
+	//intro content
+	&__content{
+		text-align: center;
+
+		@include flex($dir: column, $align: center);
+
+		&__header{
+			text-transform: uppercase;
+
+			font: {
+				size: 2.5rem;
+				family: $fSource;
+				weight: 200;
+			};
+
+			letter-spacing: 5px;
+
+			padding-bottom: 3rem;
+
+		}
+
+		&__text{
+			font-size: 1.15rem;
+			word-wrap: break-word;
+
+			max-width: 620px;
+		}
+	}
+
+	//intro slider
+	&__slider{
+		@include flex($just: center);
+
+		padding-bottom: 70px;
+
+		&__arrow{
+			width: 2.5rem;
+			height: 2.5rem;
+
+			border-radius: 50%;
+			background-color: $green;
+			cursor: pointer;
+
+			text-align: center;
+			line-height: 2.5rem;
+			font-size: 1.5rem;
+			font-weight: lighter;
+
+			transform: rotate(90deg);
+
+			transition: .3s;
+
+			&:hover{
+				background: darken($green, 10%);
+			}
+		}
+	}
+}
+
+//About
+.about{
+	&__us{
+		@include flex($just: space-around, $align: center);
+
+		&__info{
+			flex-basis: 50%;
+
+			&__text{
+				color: $gray;
+
+				&__more{
+					margin-top: 30px;
+				}
+			}
+		}
+	}
+
+	//about details
+	&__details{
+		background: $silv;
+
+		.container{
+			padding-top: 5rem;
+		}
+
+		&__content{
+			@include flex($align: center, $dir: column);
+
+			&__text{
+				color: $gray;
+				text-align: center;
+
+				max-width: 500px;
+				margin-bottom: 4rem;
+			}
+
+			//details icons
+			&__icons{
+				@include flex($just: center);
+
+				margin-bottom: 50px;
+
+				&__item{
+					margin-left: $icSize;
+					width: $icSize;
+					height: $icSize;
+
+					color: #fff;
+					text-align: center;
+					line-height: $icSize;
+					font-size: 1.5rem;
+
+					border-radius: 50%;
+					border: 1px solid #fff;
+					transition: .3s;
+					cursor: pointer;
+
+					background: $gray;
+
+					&:hover{
+						background: $green;
+					}
+				}
+			}
+
+			&__head{
+				text: {
+					align: left;
+					transform: capitalize;
+				}
+				font-size: 1.5rem;
+
+				align-self: start;
+
+				padding-bottom: 1rem;
+			}
+
+			&__row{
+				@include flex($just: space-around);
+			}
+
+			&__col{
+				flex-basis: 40%;
+			}
+		}
+	}
+
+	//About projects
+	&__projects{
+
+		@include flex($dir: column, $align: center);
+
+		&__title{
+			max-width: 500px;
+			text-align: center;
+		}
+
+		&__photos{
+			display: flex;
+
+			width: 100%;
+
+			&__item{
+				flex-basis: 25%;
+				position: relative;
+
+				cursor: pointer;
+
+				img{
+					@extend %full;
+					filter: grayscale(1);
+					transition: .3s;
+
+				}
+
+				&:first-child{
+					flex-basis: 50% !important;
+				}
+
+				&__content{
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					@extend %full;
+
+					background: transparentize(#000, .2);
+					color: #fff;
+
+					font: {
+						size: 1.5rem;
+						family: $fSource;
+					};
+
+					text-transform: uppercase;
+					letter-spacing: 5px;
+					transition: .3s;
+
+					@include flex($just: center, $align: center);
+				}
+
+				&:hover{
+					img{
+						filter: grayscale(0);
+					}
+
+					div{
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		&__footer{
+			padding: 2rem;
+			width: 100%;
+
+			color: #fff;
+			font-size: 1.25rem;
+
+			@include bgCov('work-footer.jpg');
+
+			&__content{
+				@include flex($just: space-around, $align: center);
+			}
+		}
+	}
+}
+
+//Service
+.service{
+	background: $silv;
+	.container{
+		@include flex($align: center, $dir: column);
+	}
+
+	&__title{
+		max-width: 500px;
+		text-align: center;
+	}
+
+	&__content{
+		@include flex($just: space-around);
+
+		padding: 2rem;
+
+		&__left{
+			flex-basis: 50%;
+
+			display: flex;
+
+			margin-right: 3rem;
+
+			&__list{
+				list-style-type: none;
+				margin-right: 2rem;
+
+				li{
+					margin-top: 1rem;
+				}
+			}
+
+			&__text{
+				margin-top: 2rem;
+
+				@include flex($dir: column);
+
+				&__head{
+					font-size: 1.5rem;
+				}
+
+				&>*{
+					margin-bottom: 2.5rem;
+				}
+			}
+		}
+
+		&__right{
+			
+			display: flex;
+			align-self: center;
+
+			&__list{
+				list-style-type: none;
+
+				display: flex;
+
+				&__item{
+					margin-left: 2rem;
+					color: $gray;
+
+					@include flex($dir: column);
+
+					.title{
+						text-align: center;
+						width: 100%;
+					}
+
+					.adv{
+						width: 100px;
+						height: 100px;
+						margin-bottom: 1rem;
+
+						color: $gray;
+						font-size: 1.5rem;
+
+						circle{
+							stroke-width: 5;
+							stroke: #65a7aa;
+							fill: none;
+						}
+
+						.circ_amount{
+							fill: none;
+							stroke: #6ed2bd;
+							stroke-width: 5;
+							stroke-dasharray: 2*PI()*45 2*PI()*45;
+
+							transform: rotate(-90deg) scale(1, -1);
+							transform-origin: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,205 @@
+- let imgDir = '../assets';
+- let icons = ['far fa-heart', 'fas fa-mouse-pointer', 'far fa-lightbulb'];
+
+<!DOCTYPE html>
+html(lang="en")
+head
+	meta(charset="UTF__8")
+	meta(name = "viewport" content = "width:device-width, initial-scale:1")
+	title Document
+
+	link(href = "./assets/css/main.css" rel = "stylesheet")
+	link(href = "https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel = "stylesheet")
+body
+	
+	section.intro#start
+			.intro__navbar
+				.intro__navbar__logo
+					|Bouncy
+
+				.intro__navbar__menu
+					.intro__navbar__menu__item
+						a.active(href = "#") Hello
+					.intro__navbar__menu__item 
+						a(href = "#about") About
+					.intro__navbar__menu__item 
+						a(href = "#portfolio") Portfolio
+					.intro__navbar__menu__item
+						a(href = "#team") Team
+					.intro__navbar__menu__item 
+						a(href = "#blog") Blog
+					.intro__navbar__menu__item 
+						a(href = "#contact") Contact
+			
+			.intro__content
+				.intro__content__header.
+					We Are Code Cafe
+
+				.intro__content__text.
+					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+
+			.intro__slider
+				.intro__slider__arrow.
+					&gt;
+
+	section.about#about
+		.container
+			.about__us
+				.about__us__info
+					.about__us__info__head.
+						This is Bouncy
+					.about__us__info__text
+						|At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+
+						.about__us__info__text__more
+							.but Read more
+
+
+				.about__us__image
+					img(src = `${imgDir}/about-ipad.jpg`)
+
+		.about__details
+			.container
+				.about__us__info__head
+					|DetailS ABOUT BOUNCY
+
+				.about__details__content
+					.about__details__content__text.
+						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+				
+					.about__details__content__icons
+
+						each icon in icons
+							.about__details__content__icons__item
+								i(class=icon)
+
+					.about__details__content__row
+						.about__details__content__col
+							.about__details__content__head.
+								Creative Ideas
+
+							|At 
+							span.text-green vero 
+							|eos et accusamus et iusto odio 	dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
+
+						.about__details__content__col
+							|At 
+							span.text-green vero 
+							|eos et accusamus et iusto odio dignissimos 
+							b ducimus 
+							|qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem r
+
+		.about__projects
+			.about__projects__info
+				.container
+					.about__us__info__head
+						|FEATURED PROJECTS
+
+					.about__projects__title
+						|At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+
+			.about__projects__photos
+				.about__projects__photos__item
+					img(src = imgDir + '/work-photo-1.jpg')
+
+					.about__projects__photos__item__content
+						|Test
+				.about__projects__photos__item
+					img(src = imgDir + '/work-photo-2.jpg')
+
+					.about__projects__photos__item__content
+						|Branding
+				.about__projects__photos__item
+					img(src = imgDir + '/work-photo-3.jpg')
+
+					.about__projects__photos__item__content
+						|Styling
+
+			.about__projects__footer
+				.about__projects__footer__content
+					div
+						|At vero eos et 
+						b accusamus 
+						|et iusto odio dignissimos ducimus qui blanditiis
+
+					.but.but_white Submit now
+
+	section.service#service
+		.container
+			.about__us__info__head
+				|Our Services
+
+			.service__title
+				|At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+
+			.service__content
+				.service__content__left
+					ul.service__content__left__list
+						li.about__details__content__icons__item
+							i.fas.fa-tools
+						li.about__details__content__icons__item
+							i.fas.fa-tools
+						li.about__details__content__icons__item
+							i.fas.fa-gamepad
+						li.about__details__content__icons__item
+							i.fas.fa-book
+
+					.service__content__left__text
+						.service__content__left__text__head
+							|Graphic Design
+
+						.service__content__left__text__block.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.
+
+						.service__content__left__text__block.
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.
+
+				.service__content__right
+					ul.service__content__right__list
+						li.service__content__right__list__item
+							svg.adv
+								circle(cx = 50 cy = 50 r = 45)
+
+								circle.circ_amount(
+									cx = 50 
+									cy = 50 
+									r = 45 
+									stroke-dashoffset = `${2*Math.PI*45*0.2}`
+								)
+
+								text.amount(x = 30 y = 55) 80%
+
+							div.title Branding
+
+						li.service__content__right__list__item
+							svg.adv
+								circle(cx = 50 cy = 50 r = 45)
+
+								circle.circ_amount(
+									cx = 50 
+									cy = 50 
+									r = 45 
+									stroke-dashoffset = `${2*Math.PI*45*0.25}`
+								)
+
+								text.amount(x = 30 y = 55) 75%
+
+							div.title Web Design
+
+						li.service__content__right__list__item
+							svg.adv
+								circle(cx = 50 cy = 50 r = 45)
+
+								circle.circ_amount(
+									cx = 50 
+									cy = 50 
+									r = 45 
+									stroke-dashoffset = `${2*Math.PI*45*0.4}`
+								)
+
+								text.amount(x = 30 y = 55) 60%
+
+							div.title UI/UX
+
